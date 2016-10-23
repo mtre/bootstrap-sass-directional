@@ -3,6 +3,11 @@ $bootstrap-sass-asset-helper: false !default;
 // Variables
 // --------------------------------------------------
 
+//== Directionality
+//
+//## document left-to-right (ltr) or right-to-left (rtl) directionality
+
+$dir: rtl !default;
 
 //== Colors
 //
