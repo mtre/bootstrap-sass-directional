@@ -10,7 +10,7 @@
   vertical-align: middle; // match .btn alignment given font-size hack above
   > .btn {
     position: relative;
-    float: left;
+    float: $left;
     // Bring the "active" button to the front
     &:hover,
     &:focus,
@@ -27,24 +27,24 @@
   .btn + .btn-group,
   .btn-group + .btn,
   .btn-group + .btn-group {
-    margin-left: -1px;
+    margin-#{$left}: -1px;
   }
 }
 
 // Optional: Group multiple button groups together for a toolbar
 .btn-toolbar {
-  margin-left: -5px; // Offset the first child's margin
+  margin-#{$left}: -5px; // Offset the first child's margin
   @include clearfix;
 
   .btn,
   .btn-group,
   .input-group {
-    float: left;
+    float: $left;
   }
   > .btn,
   > .btn-group,
   > .input-group {
-    margin-left: 5px;
+    margin-#{$left}: 5px;
   }
 }
 
@@ -54,7 +54,7 @@
 
 // Set corners individual because sometimes a single button can be in a .btn-group and we need :first-child and :last-child to both match
 .btn-group > .btn:first-child {
-  margin-left: 0;
+  margin-#{$left}: 0;
   &:not(:last-child):not(.dropdown-toggle) {
     @include border-right-radius(0);
   }
@@ -67,7 +67,7 @@
 
 // Custom edits for including btn-groups within btn-groups (useful for including dropdown buttons within a btn-group)
 .btn-group > .btn-group {
-  float: left;
+  float: $left;
 }
 .btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
   border-radius: 0;
@@ -125,7 +125,7 @@
 
 // Reposition the caret
 .btn .caret {
-  margin-left: 0;
+  margin-#{$left}: 0;
 }
 // Carets in other button sizes
 .btn-lg .caret {
@@ -164,7 +164,7 @@
   > .btn-group + .btn,
   > .btn-group + .btn-group {
     margin-top: -1px;
-    margin-left: 0;
+    margin-#{$left}: 0;
   }
 }
 
@@ -214,7 +214,7 @@
   }
 
   > .btn-group .dropdown-menu {
-    left: auto;
+    #{$left}: auto;
   }
 }
 
