@@ -13,7 +13,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/mtre/bootstrap-sass-directional"
+    "url": "git://github.com/mtre/bootstrap-sass-directional.git"
   },
   "keywords": [
     "bootstrap",
