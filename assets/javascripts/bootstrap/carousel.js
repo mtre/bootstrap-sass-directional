@@ -22,6 +22,8 @@
     this.interval    = null
     this.$active     = null
     this.$items      = null
+    this.nextDir     = this.$element.css('direction') == 'rtl' ? 'right' : 'left'
+    this.prevDir     = this.nextDir == 'left' ? 'right' : 'left'
 
     this.options.keyboard && this.$element.on('keydown.bs.carousel', $.proxy(this.keydown, this))
 
@@ -118,7 +120,7 @@
     var $active   = this.$element.find('.item.active')
     var $next     = next || this.getItemForDirection(type, $active)
     var isCycling = this.interval
-    var direction = type == 'next' ? 'right' : 'left'
+    var direction = type == 'next' ? this.nextDir : this.prevDir
     var that      = this
 
     if ($next.hasClass('active')) return (this.sliding = false)
