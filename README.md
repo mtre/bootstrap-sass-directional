@@ -31,4 +31,6 @@ See upstream project [Bootstrap for Sass](https://github.com/twbs/bootstrap-sass
 
 ## Credits
 
-Special thanks to both [bootstrap contributors](https://github.com/twbs/bootstrap/graphs/contributors) and [Bootstrap for Sass contributors](https://github.com/twbs/bootstrap-sass/graphs/contributors):
+Special thanks to both [bootstrap contributors](https://github.com/twbs/bootstrap/graphs/contributors) and [Bootstrap for Sass contributors](https://github.com/twbs/bootstrap-sass/graphs/contributors).
+
+Also Thanks *Tyson Matanich* for his useful [Directional-SCSS](https://github.com/tysonmatanich/directional-scss) Sass functions and mixins.
