@@ -1,5 +1,8 @@
 `bootstrap-sass-directional` is a directionalized (right-to-left (rtl) or left-to-right (ltr)) Sass-powered version of [Bootstrap](https://github.com/twbs/bootstrap) 3, ready to drop right into your Sass powered applications.
+
 It is simply made by introducing $dir variable (with 'rtl' as default or 'ltr' value) into code-generated asset files of [Bootstrap for Sass](https://github.com/twbs/bootstrap-sass).
+
+Currently used version of `Bootstrap for Sass` or `Bootstrap` is **v3.3.7**.
 
 ## Installation
 
