@@ -23,6 +23,7 @@
     this.originalBodyPad     = null
     this.scrollbarWidth      = 0
     this.ignoreBackdropClick = false
+    this.direction           = this.$body.css('direction')
 
     if (this.options.remote) {
       this.$element
@@ -243,10 +244,10 @@
   Modal.prototype.adjustDialog = function () {
     var modalIsOverflowing = this.$element[0].scrollHeight > document.documentElement.clientHeight
 
-    this.$element.css({
-      paddingRight:  !this.bodyIsOverflowing && modalIsOverflowing ? this.scrollbarWidth : '',
-      paddingLeft: this.bodyIsOverflowing && !modalIsOverflowing ? this.scrollbarWidth : ''
-    })
+    this.$element.css(this.direction == 'rtl' ? 'paddingRight' : 'paddingLeft',
+      !this.bodyIsOverflowing && modalIsOverflowing ? this.scrollbarWidth : '')
+    this.$element.css(this.direction == 'rtl' ? 'paddingLeft' : 'paddingRight',
+      this.bodyIsOverflowing && !modalIsOverflowing ? this.scrollbarWidth : '')
   }
 
   Modal.prototype.resetAdjustments = function () {
