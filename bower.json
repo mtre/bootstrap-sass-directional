@@ -1,0 +1,27 @@
+{
+  "name": "bootstrap-sass-directional",
+  "description": "Directional Bootstrap for sass, where its direction can be set to either right-to-left (rtl) or left-to-right (ltr)",
+  "main": "assets/javascripts/bootstrap.js",
+  "authors": [
+    "Mohsen Ekhtiari"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mtre/bootstrap-sass-directional.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "bootstrap",
+    "sass",
+    "css",
+    "rtl",
+    "right-to-left"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
