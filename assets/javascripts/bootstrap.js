@@ -321,6 +321,8 @@ if (typeof jQuery === 'undefined') {
     this.interval    = null
     this.$active     = null
     this.$items      = null
+    this.nextDir     = this.$element.css('direction') == 'rtl' ? 'right' : 'left'
+    this.prevDir     = this.nextDir == 'left' ? 'right' : 'left'
 
     this.options.keyboard && this.$element.on('keydown.bs.carousel', $.proxy(this.keydown, this))
 
@@ -417,7 +419,7 @@ if (typeof jQuery === 'undefined') {
     var $active   = this.$element.find('.item.active')
     var $next     = next || this.getItemForDirection(type, $active)
     var isCycling = this.interval
-    var direction = type == 'next' ? 'left' : 'right'
+    var direction = type == 'next' ? this.nextDir : this.prevDir
     var that      = this
 
     if ($next.hasClass('active')) return (this.sliding = false)
@@ -939,6 +941,7 @@ if (typeof jQuery === 'undefined') {
     this.originalBodyPad     = null
     this.scrollbarWidth      = 0
     this.ignoreBackdropClick = false
+    this.direction           = this.$body.css('direction')
 
     if (this.options.remote) {
       this.$element
@@ -1159,10 +1162,10 @@ if (typeof jQuery === 'undefined') {
   Modal.prototype.adjustDialog = function () {
     var modalIsOverflowing = this.$element[0].scrollHeight > document.documentElement.clientHeight
 
-    this.$element.css({
-      paddingLeft:  !this.bodyIsOverflowing && modalIsOverflowing ? this.scrollbarWidth : '',
-      paddingRight: this.bodyIsOverflowing && !modalIsOverflowing ? this.scrollbarWidth : ''
-    })
+    this.$element.css(this.direction == 'rtl' ? 'paddingRight' : 'paddingLeft',
+      !this.bodyIsOverflowing && modalIsOverflowing ? this.scrollbarWidth : '')
+    this.$element.css(this.direction == 'rtl' ? 'paddingLeft' : 'paddingRight',
+      this.bodyIsOverflowing && !modalIsOverflowing ? this.scrollbarWidth : '')
   }
 
   Modal.prototype.resetAdjustments = function () {
@@ -1799,7 +1802,7 @@ if (typeof jQuery === 'undefined') {
   Popover.VERSION  = '3.3.7'
 
   Popover.DEFAULTS = $.extend({}, $.fn.tooltip.Constructor.DEFAULTS, {
-    placement: 'right',
+    placement: $(document.body).css('direction') == 'rtl' ? 'left' : 'right',
     trigger: 'click',
     content: '',
     template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
