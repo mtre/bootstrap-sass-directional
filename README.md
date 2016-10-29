@@ -1,3 +1,6 @@
+[![npm version](https://badge.fury.io/js/bootstrap-sass-directional.svg)](https://badge.fury.io/js/bootstrap-sass-directional)
+[![Bower version](https://badge.fury.io/bo/bootstrap-sass-directional.svg)](https://badge.fury.io/bo/bootstrap-sass-directional)
+
 `bootstrap-sass-directional` is a directionalized (right-to-left (rtl) or left-to-right (ltr)) Sass-powered version of [Bootstrap](https://github.com/twbs/bootstrap) 3, ready to drop right into your Sass powered applications.
 
 It is simply made by introducing $dir variable (with 'rtl' as default or 'ltr' value) into code-generated asset files of [Bootstrap for Sass](https://github.com/twbs/bootstrap-sass).
