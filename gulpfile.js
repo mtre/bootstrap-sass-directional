@@ -106,4 +106,9 @@ gulp.task('css-minify', ['sass'], function () {
 
 gulp.task('css', ['sass', 'css-minify']);
 
+gulp.task('fonts', function() {
+  gulp.src('assets/fonts/bootstrap/*.*')
+  .pipe(gulp.dest('./dist/fonts/bootstrap'));
+});
+
 gulp.task('default', ['js']);
