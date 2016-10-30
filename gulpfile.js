@@ -87,4 +87,17 @@ gulp.task('sass', function () {
   .pipe(gulp.dest('./dist/css'));
 });
 
+gulp.task('css-minify', function () {
+  return gulp.src('./dist/sass/**/*.scss')
+  .pipe(rename(function (path) {
+    path.extname = ".min" + path.extname;
+  }))
+  .pipe(sourcemaps.init())
+  .pipe(sass({precision: 8, outputStyle: 'compressed'}).on('error', sass.logError))
+  .pipe(sourcemaps.write('./'))
+  .pipe(gulp.dest('./dist/css'));
+});
+
+gulp.task('css', ['sass', 'css-minify']);
+
 gulp.task('default', ['js']);
