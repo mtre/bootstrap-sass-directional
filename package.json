@@ -29,6 +29,7 @@
     "gulp-header": "^1.8.8",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^2.2.0",
     "gulp-uglify": "^2.0.0"
   }
 }

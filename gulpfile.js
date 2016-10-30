@@ -9,6 +9,7 @@ var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var header = require('gulp-header');
 var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 
 var scripts = [
   'assets/javascripts/bootstrap/transition.js',
@@ -80,8 +81,10 @@ gulp.task('js', ['js-minify']);
 
 gulp.task('sass', function () {
   return gulp.src('./dist/sass/**/*.scss')
+  .pipe(sourcemaps.init())
   .pipe(sass({precision: 8}).on('error', sass.logError))
+  .pipe(sourcemaps.write('./'))
   .pipe(gulp.dest('./dist/css'));
-})
+});
 
 gulp.task('default', ['js']);
