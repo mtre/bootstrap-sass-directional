@@ -8,6 +8,7 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var header = require('gulp-header');
+var sass = require('gulp-sass');
 
 var scripts = [
   'assets/javascripts/bootstrap/transition.js',
@@ -76,5 +77,11 @@ gulp.task('js-minify', ['js-concat'], function() {
 });
 
 gulp.task('js', ['js-minify']);
+
+gulp.task('sass', function () {
+  return gulp.src('./dist/sass/**/*.scss')
+  .pipe(sass({precision: 8}).on('error', sass.logError))
+  .pipe(gulp.dest('./dist/css'));
+})
 
 gulp.task('default', ['js']);
