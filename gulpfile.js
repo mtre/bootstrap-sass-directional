@@ -72,13 +72,18 @@ gulp.task('js-minify', ['js-concat'], function() {
       warnings: false
     },
     mangle: true,
-    preserveComments: 'some',
+    preserveComments: 'some'
   }))
   .pipe(rename('bootstrap.min.js'))
   .pipe(gulp.dest('./assets/javascripts/'));
 });
 
-gulp.task('js', ['js-minify']);
+gulp.task('js-dist', ['js-minify'], function() {
+  gulp.src(['assets/javascripts/bootstrap.js', 'assets/javascripts/bootstrap.min.js'])
+  .pipe(gulp.dest('./dist/js/'));
+});
+
+gulp.task('js', ['js-dist']);
 
 gulp.task('sass', function () {
   return gulp.src('./dist/sass/**/*.scss')
