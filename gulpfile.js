@@ -10,6 +10,7 @@ var rename = require('gulp-rename');
 var header = require('gulp-header');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
+var cleanCSS = require('gulp-clean-css');
 
 var scripts = [
   'assets/javascripts/bootstrap/transition.js',
@@ -87,13 +88,13 @@ gulp.task('sass', function () {
   .pipe(gulp.dest('./dist/css'));
 });
 
-gulp.task('css-minify', function () {
-  return gulp.src('./dist/sass/**/*.scss')
+gulp.task('css-minify', ['sass'], function () {
+  return gulp.src(['./dist/css/**/*.css', '!./dist/css/**/*.min.css'])
+  .pipe(sourcemaps.init({loadMaps: true}))
+  .pipe(cleanCSS())
   .pipe(rename(function (path) {
     path.extname = ".min" + path.extname;
   }))
-  .pipe(sourcemaps.init())
-  .pipe(sass({precision: 8, outputStyle: 'compressed'}).on('error', sass.logError))
   .pipe(sourcemaps.write('./'))
   .pipe(gulp.dest('./dist/css'));
 });
