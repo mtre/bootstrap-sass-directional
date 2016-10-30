@@ -13,18 +13,18 @@ var sourcemaps = require('gulp-sourcemaps');
 var cleanCSS = require('gulp-clean-css');
 
 var scripts = [
-  'assets/javascripts/bootstrap/transition.js',
-  'assets/javascripts/bootstrap/alert.js',
-  'assets/javascripts/bootstrap/button.js',
-  'assets/javascripts/bootstrap/carousel.js',
-  'assets/javascripts/bootstrap/collapse.js',
-  'assets/javascripts/bootstrap/dropdown.js',
-  'assets/javascripts/bootstrap/modal.js',
-  'assets/javascripts/bootstrap/tooltip.js', // must be before popover
-  'assets/javascripts/bootstrap/popover.js',
-  'assets/javascripts/bootstrap/scrollspy.js',
-  'assets/javascripts/bootstrap/tab.js',
-  'assets/javascripts/bootstrap/affix.js'
+  './assets/javascripts/bootstrap/transition.js',
+  './assets/javascripts/bootstrap/alert.js',
+  './assets/javascripts/bootstrap/button.js',
+  './assets/javascripts/bootstrap/carousel.js',
+  './assets/javascripts/bootstrap/collapse.js',
+  './assets/javascripts/bootstrap/dropdown.js',
+  './assets/javascripts/bootstrap/modal.js',
+  './assets/javascripts/bootstrap/tooltip.js', // must be before popover
+  './assets/javascripts/bootstrap/popover.js',
+  './assets/javascripts/bootstrap/scrollspy.js',
+  './assets/javascripts/bootstrap/tab.js',
+  './assets/javascripts/bootstrap/affix.js'
 ];
 
 var bootstrapPkg = {
@@ -66,7 +66,7 @@ gulp.task('js-concat', function() {
 });
 
 gulp.task('js-minify', ['js-concat'], function() {
-  gulp.src('assets/javascripts/bootstrap.js')
+  gulp.src('./assets/javascripts/bootstrap.js')
   .pipe(uglify({
     compress: {
       warnings: false
@@ -79,7 +79,7 @@ gulp.task('js-minify', ['js-concat'], function() {
 });
 
 gulp.task('js-dist', ['js-minify'], function() {
-  gulp.src(['assets/javascripts/bootstrap.js', 'assets/javascripts/bootstrap.min.js'])
+  gulp.src(['./assets/javascripts/bootstrap.js', './assets/javascripts/bootstrap.min.js'])
   .pipe(gulp.dest('./dist/js/'));
 });
 
@@ -107,7 +107,7 @@ gulp.task('css-minify', ['sass'], function () {
 gulp.task('css', ['sass', 'css-minify']);
 
 gulp.task('fonts', function() {
-  gulp.src('assets/fonts/bootstrap/*.*')
+  gulp.src('./assets/fonts/bootstrap/*.*')
   .pipe(gulp.dest('./dist/fonts/bootstrap'));
 });
 
