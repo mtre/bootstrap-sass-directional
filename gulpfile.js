@@ -11,6 +11,7 @@ var header = require('gulp-header');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var cleanCSS = require('gulp-clean-css');
+var autoprefixer = require('gulp-autoprefixer');
 
 var scripts = [
   './assets/javascripts/bootstrap/transition.js',
@@ -89,6 +90,19 @@ gulp.task('sass', function () {
   return gulp.src('./dist/sass/**/*.scss')
   .pipe(sourcemaps.init())
   .pipe(sass({precision: 8}).on('error', sass.logError))
+  .pipe(autoprefixer({
+    browsers: [
+      "Android 2.3",
+      "Android >= 4",
+      "Chrome >= 20",
+      "Firefox >= 24",
+      "Explorer >= 8",
+      "iOS >= 6",
+      "Opera >= 12",
+      "Safari >= 6"
+    ],
+    cascade: false
+  }))
   .pipe(sourcemaps.write('./'))
   .pipe(gulp.dest('./dist/css'));
 });
