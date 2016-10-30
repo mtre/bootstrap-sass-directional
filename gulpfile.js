@@ -111,4 +111,4 @@ gulp.task('fonts', function() {
   .pipe(gulp.dest('./dist/fonts/bootstrap'));
 });
 
-gulp.task('default', ['js']);
+gulp.task('default', ['css', 'js', 'fonts']);
