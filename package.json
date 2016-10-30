@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-sass-directional",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Directional Bootstrap for sass, where its direction can be set to either right-to-left (rtl) or left-to-right (ltr)",
   "author": "Mohsen Ekhtiari",
   "main": "assets/javascripts/bootstrap.js",
