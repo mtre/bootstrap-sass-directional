@@ -7,7 +7,7 @@ It is simply made by introducing $dir variable (with 'rtl' as default or 'ltr' v
 
 Currently used version of `Bootstrap for Sass` or `Bootstrap` is **v3.3.7**.
 
-This work is using Bootstrap Version **v3.4.0**
+This fork is using Bootstrap Version **v3.4.0**
 
 ## Installation
 
