@@ -1,3 +1,5 @@
+This fork is using Bootstrap Version **v3.4.1**
+
 [![npm version](https://badge.fury.io/js/bootstrap-sass-directional.svg)](https://badge.fury.io/js/bootstrap-sass-directional)
 [![Bower version](https://badge.fury.io/bo/bootstrap-sass-directional.svg)](https://badge.fury.io/bo/bootstrap-sass-directional)
 
@@ -6,8 +8,6 @@
 It is simply made by introducing $dir variable (with 'rtl' as default or 'ltr' value) into code-generated asset files of [Bootstrap for Sass](https://github.com/twbs/bootstrap-sass).
 
 Currently used version of `Bootstrap for Sass` or `Bootstrap` is **v3.3.7**.
-
-This fork is using Bootstrap Version **v3.4.1**
 
 ## Installation
 
