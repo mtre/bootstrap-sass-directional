@@ -1,4 +1,5 @@
 This fork is using Bootstrap Version **v3.4.1**
+===============================================
 
 [![npm version](https://badge.fury.io/js/bootstrap-sass-directional.svg)](https://badge.fury.io/js/bootstrap-sass-directional)
 [![Bower version](https://badge.fury.io/bo/bootstrap-sass-directional.svg)](https://badge.fury.io/bo/bootstrap-sass-directional)
