@@ -245,7 +245,7 @@ textarea.form-control {
 
   label {
     min-height: $line-height-computed; // Ensure the input doesn't jump when there is no text
-    padding-left: 20px;
+    padding-#{$left}: 20px;
     margin-bottom: 0;
     font-weight: 400;
     cursor: pointer;
@@ -257,7 +257,7 @@ textarea.form-control {
 .checkbox-inline input[type="checkbox"] {
   position: absolute;
   margin-top: 4px \9;
-  margin-left: -20px;
+  margin-#{$left}: -20px;
 }
 
 .radio + .radio,
@@ -270,7 +270,7 @@ textarea.form-control {
 .checkbox-inline {
   position: relative;
   display: inline-block;
-  padding-left: 20px;
+  padding-#{$left}: 20px;
   margin-bottom: 0;
   font-weight: 400;
   vertical-align: middle;
@@ -285,7 +285,7 @@ textarea.form-control {
 .radio-inline + .radio-inline,
 .checkbox-inline + .checkbox-inline {
   margin-top: 0;
-  margin-left: 10px; // space out consecutive inline controls
+  margin-#{$left}: 10px; // space out consecutive inline controls
 }
 
 
@@ -381,14 +381,14 @@ textarea.form-control {
 
   // Ensure icons don't overlap text
   .form-control {
-    padding-right: ($input-height-base * 1.25);
+    padding-#{$right}: ($input-height-base * 1.25);
   }
 }
 // Feedback icon (requires .glyphicon classes)
 .form-control-feedback {
   position: absolute;
   top: 0;
-  right: 0;
+  #{$right}: 0;
   z-index: 2; // Ensure icon is above input groups
   display: block;
   width: $input-height-base;
@@ -514,13 +514,13 @@ textarea.form-control {
       vertical-align: middle;
 
       label {
-        padding-left: 0;
+        padding-#{$left}: 0;
       }
     }
     .radio input[type="radio"],
     .checkbox input[type="checkbox"] {
       position: relative;
-      margin-left: 0;
+      margin-#{$left}: 0;
     }
 
     // Re-override the feedback icon.
@@ -581,7 +581,7 @@ textarea.form-control {
   // Reposition the icon because it's now within a grid column and columns have
   // `position: relative;` on them. Also accounts for the grid gutter padding.
   .has-feedback .form-control-feedback {
-    right: floor(($grid-gutter-width / 2));
+    #{$right}: floor(($grid-gutter-width / 2));
   }
 
   // Form group sizes

@@ -82,8 +82,8 @@ small,
 
 mark,
 .mark {
-  padding: .2em;
   background-color: $state-warning-bg;
+  padding: .2em;
 }
 
 // Alignment
@@ -160,7 +160,7 @@ ol {
 
 // [converter] extracted from `.list-unstyled` for libsass compatibility
 @mixin list-unstyled {
-  padding-left: 0;
+  padding-#{$left}: 0;
   list-style: none;
 }
 // [converter] extracted as `@mixin list-unstyled` for libsass compatibility
@@ -172,12 +172,12 @@ ol {
 // Inline turns list items into inline-block
 .list-inline {
   @include list-unstyled;
-  margin-left: -5px;
+  margin-#{$left}: -5px;
 
   > li {
     display: inline-block;
-    padding-right: 5px;
     padding-left: 5px;
+    padding-right: 5px;
   }
 }
 
@@ -194,7 +194,7 @@ dt {
   font-weight: 700;
 }
 dd {
-  margin-left: 0; // Undo browser default
+  margin-#{$left}: 0; // Undo browser default
 }
 
 // Horizontal description lists
@@ -216,7 +216,7 @@ dd {
       @include text-overflow;
     }
     dd {
-      margin-left: $dl-horizontal-offset;
+      margin-#{$left}: $dl-horizontal-offset;
     }
   }
 }
@@ -226,12 +226,12 @@ dd {
 // -------------------------
 
 // Abbreviations and acronyms
-// Add data-* attribute to help out our tooltip plugin, per https://github.com/twbs/bootstrap/issues/5257
 abbr[title],
+// Add data-* attribute to help out our tooltip plugin, per https://github.com/twbs/bootstrap/issues/5257
 abbr[data-original-title] {
   cursor: help;
+  border-bottom: 1px dotted $abbr-border-color;
 }
-
 .initialism {
   font-size: 90%;
   @extend .text-uppercase;
@@ -242,7 +242,7 @@ blockquote {
   padding: ($line-height-computed / 2) $line-height-computed;
   margin: 0 0 $line-height-computed;
   font-size: $blockquote-font-size;
-  border-left: 5px solid $blockquote-border-color;
+  border-#{$left}: 5px solid $blockquote-border-color;
 
   p,
   ul,
@@ -263,29 +263,29 @@ blockquote {
     color: $blockquote-small-color;
 
     &:before {
-      content: "\2014 \00A0"; // em dash, nbsp
+      content: '\2014 \00A0'; // em dash, nbsp
     }
   }
 }
 
 // Opposite alignment of blockquote
 //
-// Heads up: `blockquote.pull-right` has been deprecated as of v3.1.0.
+// Heads up: `blockquote.pull-#{$right}` has been deprecated as of v3.1.0.
 .blockquote-reverse,
-blockquote.pull-right {
-  padding-right: 15px;
-  padding-left: 0;
+blockquote.pull-#{$right} {
+  padding-#{$right}: 15px;
+  padding-#{$left}: 0;
+  border-#{$right}: 5px solid $blockquote-border-color;
+  border-#{$left}: 0;
   text-align: $right;
-  border-right: 5px solid $blockquote-border-color;
-  border-left: 0;
 
   // Account for citation
   footer,
   small,
   .small {
-    &:before { content: ""; }
+    &:before { content: ''; }
     &:after {
-      content: "\00A0 \2014"; // nbsp, em dash
+      content: '\00A0 \2014'; // nbsp, em dash
     }
   }
 }
