@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6,
 
   small,
   .small {
-    font-weight: normal;
+    font-weight: 400;
     line-height: 1;
     color: $headings-small-color;
   }
@@ -87,8 +87,8 @@ mark,
 }
 
 // Alignment
-.text-left           { text-align: left; }
-.text-right          { text-align: right; }
+.text-left           { text-align: $left; }
+.text-right          { text-align: $right; }
 .text-center         { text-align: center; }
 .text-justify        { text-align: justify; }
 .text-nowrap         { white-space: nowrap; }
@@ -191,7 +191,7 @@ dd {
   line-height: $line-height-base;
 }
 dt {
-  font-weight: bold;
+  font-weight: 700;
 }
 dd {
   margin-#{$left}: 0; // Undo browser default
